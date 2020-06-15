@@ -1,7 +1,4 @@
-import pygame
 import art
-import random
-
 from game import Game
 
 def main():
