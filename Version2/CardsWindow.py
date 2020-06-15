@@ -136,7 +136,7 @@ class Game:
         # Play the game until the player presses the close box.
         # - self is the Game that should be continued or not.
 
-        while not self.close_clicked:  # until player clicks close box
+        while not self.close_clicked and self.continue_game:  # until player clicks close box
             # play frame
             self.handle_events()
             self.draw()
@@ -163,6 +163,8 @@ class Game:
             for tile in row:
                 if tile.select(position):  # click inside unoccupied tile
                     self.CardsClicked.append(tile.attributes)
+                    if len(self.CardsClicked) == 12:
+                        self.continue_game = False
         print(self.CardsClicked)
 
     def draw(self):
