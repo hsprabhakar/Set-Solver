@@ -62,7 +62,7 @@ class Game:
         self.ShadingIndexCalled = -1
         self.Index = -1
         self.CardsClicked, self.board, self.image_list = [], [], []
-        self.ReferenceImage = pygame.image.load('A1PNG.png')
+        self.ReferenceImage = pygame.image.load('images/A1PNG.png')
         self.load_images()
         self.create_board()
 
@@ -71,7 +71,7 @@ class Game:
         Letters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I']
         for i in range(0, 9):
             for index in range(1, 10):
-                image = pygame.image.load(str(Letters[i]) + str(index) + 'PNG.png')
+                image = pygame.image.load('images/'+str(Letters[i]) + str(index) + 'PNG.png')
                 self.image_list.append(image)
 
     def create_board(self):
